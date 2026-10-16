@@ -1,0 +1,8 @@
+<CustomerAccount>
+    <CustomerId>CUST-1001</CustomerId>
+    <FirstName>Ravi</FirstName>
+    <LastName>Kumar</LastName>
+    <Email>ravi.kumar@example.com</Email>
+    <CountryCode>IN</CountryCode>
+    <AccountType>PREMIUM</AccountType>
+</CustomerAccount>
