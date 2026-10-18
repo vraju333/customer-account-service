@@ -25,8 +25,9 @@ public class CustomerService {
     private static final Pattern COUNTRY =
             Pattern.compile("^[A-Z]{2}$");
 
+    // CAS-4: Support ENTERPRISE in addition to existing account types.
     private static final Set<String> ACCOUNT_TYPES =
-            Set.of("STANDARD", "PREMIUM", "BUSINESS");
+            Set.of("STANDARD", "PREMIUM", "BUSINESS", "ENTERPRISE");
 
     private final CustomerAccountRepository repository;
     private final CustomerXmlMapper xmlMapper;
@@ -133,7 +134,7 @@ public class CustomerService {
 
         if (!ACCOUNT_TYPES.contains(c.getAccountType()))
             throw new IllegalArgumentException(
-                    "accountType must be STANDARD, PREMIUM, or BUSINESS");
+                    "accountType must be STANDARD, PREMIUM, BUSINESS, or ENTERPRISE");
     }
 
     private void require(String value, String field) {
