@@ -17,8 +17,9 @@ import java.util.regex.Pattern;
 @Service
 public class CustomerService {
 
+    // CAS-3: Reject malformed addresses, consecutive dots and missing domain suffix.
     private static final Pattern EMAIL =
-            Pattern.compile("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
+            Pattern.compile("^[A-Za-z0-9_+%-]+(?:\\.[A-Za-z0-9_+%-]+)*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*\\.[A-Za-z]{2,}$");
 
     // CAS-2: Country code must contain exactly two letters.
     private static final Pattern COUNTRY =
