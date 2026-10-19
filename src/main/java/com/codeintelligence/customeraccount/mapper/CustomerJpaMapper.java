@@ -12,7 +12,9 @@ public class CustomerJpaMapper {
         target.setFirstName(source.getFirstName());
         target.setLastName(source.getLastName());
         target.setEmail(source.getEmail());
-        target.setCountryCode(source.getCountryCode());
+        if(null != source.getCountryCode()) {
+            target.setCountryCode(source.getCountryCode());
+        }
         target.setAccountType(source.getAccountType());
         return target;
     }
