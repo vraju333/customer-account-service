@@ -9,6 +9,7 @@ import java.util.Locale;
 @Component
 public class CustomerXmlMapper {
     public Customer toModel(CustomerXmlRequest source) {
+        //addspace
         Customer target = new Customer();
         target.setCustomerId(trim(source.getCustomerId()));
         target.setFirstName(trim(source.getFirstName()));
